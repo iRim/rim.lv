@@ -3,6 +3,7 @@ import {
   defineConfig
 } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import copy from 'rollup-plugin-copy'
 
 const PATHS = {
   src: path.resolve(__dirname, './src'),
@@ -25,7 +26,13 @@ export default defineConfig({
   },
 
   plugins: [
-    vue()
+    vue(),
+    copy({
+      targets: [{
+        src: 'src/static/.htaccess',
+        dest: 'public_html'
+      }],
+    })
   ],
 
   build: {
