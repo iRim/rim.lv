@@ -5,15 +5,20 @@ import {
 import vue from '@vitejs/plugin-vue'
 import copy from 'rollup-plugin-copy'
 
-const PATHS = {
-  src: path.resolve(__dirname, './src'),
-  output: path.resolve(__dirname, './public_html'),
-  static: path.resolve(__dirname, './src/static'),
-}
+const PATH_INTERNAL = {
+    src: 'src',
+    output: 'public_html',
+    static: 'src/static',
+  },
+  PATH = {
+    src: path.resolve(__dirname, PATH_INTERNAL.src),
+    output: path.resolve(__dirname, PATH_INTERNAL.output),
+    static: path.resolve(__dirname, PATH_INTERNAL.static),
+  }
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: PATHS.static, // where is index.html
+  root: PATH.static, // where is index.html
 
   server: {
     port: 80
@@ -21,7 +26,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': PATHS.src
+      '@': PATH.src
     },
   },
 
@@ -29,15 +34,20 @@ export default defineConfig({
     vue(),
     copy({
       targets: [{
-        src: 'src/static/.htaccess',
-        dest: 'public_html'
+        src: [
+          // `${PATH_INTERNAL.static}/index.html`,
+          `${PATH_INTERNAL.static}/.htaccess`,
+          // `${PATH_INTERNAL.static}/favicon.ico`,
+          // `${PATH_INTERNAL.static}/logo.png`
+        ],
+        dest: PATH_INTERNAL.output
       }],
     })
   ],
 
   build: {
     emptyOutDir: true,
-    outDir: PATHS.output,
+    outDir: PATH.output,
   },
 
 })
