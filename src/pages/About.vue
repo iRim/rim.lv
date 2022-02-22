@@ -1,8 +1,6 @@
 <template>
-  <div>
-    ABOUT PAGE
-    <img src="@/static/logo.png" alt="" />
-  </div>
+  ABOUT PAGE
+  <img src="@/static/logo.png" alt="" />
 </template>
 
 <script>
