@@ -1,14 +1,18 @@
 :root {
-  --bg: #111;
-  --color: #ff851b;
-
-  --font: "Ubuntu", sans-serif;
-  --icon: "Material Icons";
-
   --int-1: 1rem;
   --int-1-5: 1.5rem;
 
-  --header-font-size: 1.2rem;
-  --header-height: 10vh;
-  --header-padding: 0 var(--int-1-5);
+  --w: 1024px;
+  --max-width: calc(var(--w) - var(--int-1) * 2);
+
+  --bg: #111;
+  --color: #ff851b;
+
+  --font-family: "Ubuntu", sans-serif;
+  --font-size: 1rem;
+  --icon: "Material Icons";
+
+  --small: 0.9rem;
+  --h1: 2rem;
+  --h3: var(--font-size);
 }
