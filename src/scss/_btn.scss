@@ -1,0 +1,19 @@
+.btn {
+  display: inline-block;
+  border: var(--btn-border);
+  font-size: var(--btn-font-size);
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  text-shadow: var(--text-shadow);
+
+  &:hover {
+    background-color: var(--color);
+    color: var(--bg);
+    text-shadow: var(--text-shadow-invert);
+  }
+
+  + .btn {
+    margin-left: 1rem;
+  }
+}

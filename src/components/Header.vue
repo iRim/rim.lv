@@ -1,16 +1,26 @@
 <template>
   <header>
     <router-link :to="{ name: 'Home' }">Rim</router-link>
-    <span class="material-icons-outlined"> light_mode </span>
+    <fa-icon :icon="dark ? 'sun' : 'moon'" @click="dark = !dark" />
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      dark: true,
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 header {
   display: flex;
 
   width: 100%;
-  height: 10vh;
+  height: var(--header-height);
 
   align-items: center;
   justify-content: space-between;
@@ -19,7 +29,7 @@ header {
     font-size: 1.3rem;
   }
 
-  > .material-icons-outlined {
+  > [class*="fa-"] {
     cursor: pointer;
   }
 }

@@ -4,15 +4,24 @@
 
   --w: 1024px;
   --max-width: calc(var(--w) - var(--int-1) * 2);
+  --max-height: 100vh;
 
   --bg: #111;
   --color: #ff851b;
 
   --font-family: "Ubuntu", sans-serif;
   --font-size: 1rem;
+  --font-weight: 300;
+  --text-shadow: 0px 0px 0.2rem var(--color);
+  --text-shadow-invert: 0px 0px 0.2rem var(--bg);
   --icon: "Material Icons";
 
-  --small: 0.9rem;
-  --h1: 2rem;
-  --h3: var(--font-size);
+  --small: 1.2rem;
+  --h1: 3rem;
+  --h3: 1.5rem;
+
+  --header-height: 10vh;
+
+  --btn-border: 0.1rem solid var(--color);
+  --btn-font-size: 1.4rem;
 }

@@ -14,7 +14,10 @@ export default {
   components: {
     Header,
 
+    // Pages
     Home,
+
+    
   },
 };
 </script>
