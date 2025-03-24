@@ -1,13 +1,14 @@
-import {
-	createApp,
-} from 'vue'
-import {
-	FontAwesomeIcon
-} from './fontawesome'
-import router from './router'
-import App from './App.vue'
+import './scss/index.scss'
 
-createApp(App)
-	.component('fa-icon', FontAwesomeIcon)
-	.use(router)
-	.mount('#app')
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import App from './vue/App.vue'
+import router from './router'
+
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')
