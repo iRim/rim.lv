@@ -1,0 +1,15 @@
+@use 'mixins' as *;
+
+.container {
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.row {
+  @include row();
+}
+
+.column {
+  @include column();
+}

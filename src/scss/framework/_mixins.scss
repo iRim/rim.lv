@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+@mixin generate-each-classes(
+  $class-name: '.width-',
+  $property: 'flex-basis',
+  $values: $range-width
+) {
+  @each $v in $values {
+    #{$class-name}#{$v} {
+      #{$property}: #{$v}#{'%'};
+    }
+  }
+}
+
+@mixin row() {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@mixin column() {
+  flex: 0 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+
+  @include generate-each-classes('&.width-', 'flex-basis');
+  @include generate-each-classes('&.offset-', 'margin-left');
+}
+
+@mixin bordered($sides...) {
+  @each $side in $sides {
+    border-#{$side}: $border;
+  }
+}

@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+table {
+  display: table;
+  border-spacing: 0;
+  overflow-x: auto;
+  text-align: left;
+  width: 100%;
+
+  > caption {
+    @include bordered(bottom);
+  }
+
+  tr {
+    > th,
+    > td {
+      padding: 0.5rem 1rem;
+      @include bordered(bottom);
+    }
+
+    > th {
+      font-weight: 600;
+    }
+  }
+
+  &.bordered {
+    tr {
+      > th,
+      > td {
+        @include bordered(top, bottom, right);
+        &:first-child {
+          @include bordered(left);
+        }
+      }
+    }
+  }
+  &.striped-always,
+  &.striped:is(:not(:hover)) {
+    > tbody > tr:nth-child(odd) {
+      background-color: $color-background;
+    }
+  }
+  &.hoverable {
+    > tbody > tr:hover {
+      background-color: $color-background;
+    }
+  }
+}
