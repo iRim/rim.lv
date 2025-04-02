@@ -1,4 +1,7 @@
+@use 'variables' as *;
 @use 'mixins' as *;
+
+@include generate-each-classes('.w-', 'width');
 
 .container {
   max-width: 128rem;
@@ -12,4 +15,16 @@
 
 .column {
   @include column();
+
+  &.as-row {
+    flex-direction: row;
+  }
+  &.as-column {
+    flex-direction: column;
+  }
 }
+
+// Padding classes
+@include spacing-group('.p', 'padding', $grid-padding);
+// Margin classes
+@include spacing-group('.m', 'margin', $grid-margin);

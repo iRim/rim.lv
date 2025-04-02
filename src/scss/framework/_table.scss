@@ -2,21 +2,17 @@
 @use 'mixins' as *;
 
 table {
-  display: table;
+  @include table-collapse();
   border-spacing: 0;
   overflow-x: auto;
-  text-align: left;
   width: 100%;
-
-  > caption {
-    @include bordered(bottom);
-  }
+  text-align: left;
 
   tr {
     > th,
     > td {
       padding: 0.5rem 1rem;
-      @include bordered(bottom);
+      @include bordered($border-table, bottom);
     }
 
     > th {
@@ -28,11 +24,22 @@ table {
     tr {
       > th,
       > td {
-        @include bordered(top, bottom, right);
+        @include bordered($border-table, bottom, right);
         &:first-child {
-          @include bordered(left);
+          @include bordered($border-table, left);
         }
       }
+
+      &:first-child {
+        > th,
+        td {
+          @include bordered($border-table, top);
+        }
+      }
+    }
+
+    > thead + tbody > tr:first-child > td {
+      border-top: none;
     }
   }
   &.striped-always,
@@ -45,5 +52,8 @@ table {
     > tbody > tr:hover {
       background-color: $color-background;
     }
+  }
+  &.spaced {
+    border-spacing: $border-spacing;
   }
 }

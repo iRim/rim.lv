@@ -1,0 +1,53 @@
+@use '../variables' as *;
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: $btn-padding;
+  height: $btn-height;
+  background-color: $color-primary;
+  border: 0.1rem solid $color-primary;
+  border-radius: $border-radius;
+  color: $color-white;
+
+  &.disabled,
+  &:disabled {
+    background-color: rgba($color: $color-primary, $alpha: 0.5);
+    border-color: transparent;
+    color: $color-white;
+    cursor: not-allowed;
+  }
+
+  &.link,
+  &.outlined {
+    background-color: transparent;
+    color: $color-primary;
+  }
+
+  &.outlined {
+    &.disabled,
+    &:disabled {
+      border-color: rgba($color: $color-primary, $alpha: 0.5);
+      color: rgba($color: $color-primary, $alpha: 0.5);
+    }
+  }
+
+  &.link {
+    border-color: transparent;
+
+    &.disabled,
+    &:disabled {
+      color: rgba($color: $color-primary, $alpha: 0.5);
+    }
+  }
+
+  + .btn {
+    margin-top: 1rem;
+  }
+}

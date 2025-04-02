@@ -1,7 +1,49 @@
-$color-primary: #9b4dca !default;
-$color-secondary: #606c76 !default;
-$color-border: #e0e0e0 !default;
-$color-background: #f7f7f7 !default;
+// $color-primary: #9b4dca !default;
+// $color-secondary: #606c76 !default;
+// $color-border: #e0e0e0 !default;
+// $color-background: #f7f7f7 !default;
+
+$color-primary: #f39c12 !default;
+$color-secondary: #2c3e50 !default;
+$color-border: #bdc3c7 !default;
+$color-background: #ecf0f1 !default;
+$color-white: #ffffff !default;
+$color-success: #2ecc71 !default;
+$color-danger: #e74c3c !default;
+$color-warning: #f1c40f !default;
+$color-info: #3498db !default;
+$color-light: #ecf0f1 !default;
+$color-dark: #34495e !default;
+$color-muted: #95a5a6 !default;
+$color-link: #3498db !default;
+$color-link-hover: #2980b9 !default;
+$color-link-active: #1abc9c !default;
+$color-link-disabled: #bdc3c7 !default;
+$color-link-visited: #8e44ad !default;
+$color-link-visited-hover: #7d3c98 !default;
+$color-link-visited-active: #6c3483 !default;
+$color-link-visited-disabled: #5d3c98 !default;
 
 $range-width: 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100 !default;
-$border: 0.1rem solid $color-border !default;
+$border-table: 0.1rem solid $color-border !default;
+$border-radius: 0 !default;
+$border-spacing: 0.3rem !default;
+
+$btn-padding: 0rem 1.5rem !default;
+$btn-height: 36px !default;
+$btn-height-sm: 30px !default;
+$btn-height-lg: 42px !default;
+
+$grid-padding: (
+  top: 0.5rem,
+  bottom: 0.5rem,
+  left: 1.5rem,
+  right: 1.5rem,
+) !default;
+
+$grid-margin: (
+  top: 0.5rem,
+  bottom: 0.5rem,
+  left: 1.5rem,
+  right: 1.5rem,
+) !default;

@@ -12,23 +12,67 @@
   }
 }
 
-@mixin row() {
+@mixin table-collapse() {
+  @if $border-radius > 0 {
+    border-collapse: separate;
+  } @else {
+    border-collapse: collapse;
+  }
+}
+
+@mixin flex() {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@mixin row() {
+  @include flex();
   width: 100%;
 }
 
 @mixin column() {
+  @include flex();
   flex: 0 0 auto;
   max-width: 100%;
   overflow: hidden;
 
-  @include generate-each-classes('&.width-', 'flex-basis');
-  @include generate-each-classes('&.offset-', 'margin-left');
+  @include generate-each-classes('&.w-', 'flex-basis');
+  @include generate-each-classes('&.o-', 'margin-left');
 }
 
-@mixin bordered($sides...) {
+@mixin bordered($border, $sides...) {
   @each $side in $sides {
     border-#{$side}: $border;
+  }
+}
+
+@mixin border-radius($sides...) {
+  @each $side in $sides {
+    border-#{$side}-radius: $border-radius;
+  }
+}
+
+// Spaccing classes
+@mixin spacing-group($name, $property, $map) {
+  @each $side, $value in $map {
+    #{$name}-#{$side} {
+      #{$property}-#{$side}: $value;
+    }
+  }
+
+  // Horisontal (left + right)
+  #{$name}-h {
+    @extend #{$name}-left, #{$name}-right;
+  }
+
+  // Vertical (top + bottom)
+  #{$name}-v {
+    @extend #{$name}-top, #{$name}-bottom;
+  }
+
+  // All sides (top + bottom + left + right)
+  #{$name} {
+    @extend #{$name}-h, #{$name}-v;
   }
 }
