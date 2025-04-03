@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'variables' as *;
 
 @mixin generate-each-classes(
@@ -77,8 +78,34 @@
   }
 }
 
-@mixin btn() {
-  color: $btn-color;
-  background-color: $btn-bg;
-  border-color: $btn-border;
+// Create .btn colors
+@mixin btn($name, $bg, $border: transparent, $color: $color-white) {
+  #{$name} {
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+
+    &.ghost,
+    &.outlined {
+      background-color: transparent;
+    }
+
+    &.ghost {
+      border-color: transparent;
+    }
+
+    &.disabled,
+    &:disabled {
+      background-color: color.adjust($bg, $lightness: 20%);
+      border-color: color.adjust($border, $lightness: 20%);
+      color: $color;
+    }
+
+    &.active,
+    &:hover:is(:not(.disabled, :disabled)) {
+      background-color: color.adjust($bg, $blackness: 20%);
+      border-color: color.adjust($border, $blackness: 20%);
+      color: $color;
+    }
+  }
 }

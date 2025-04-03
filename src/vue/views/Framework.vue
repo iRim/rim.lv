@@ -1,3 +1,21 @@
+<script setup>
+import { createApp, onMounted, reactive, ref } from 'vue'
+
+const colors = ref({
+  default: '',
+})
+const types = ref({
+  normal: '',
+})
+
+const createObj = (ref, values) => Object.values(values).map((v) => (ref.value[v] = v))
+
+onMounted(() => {
+  createObj(colors, ['primary', 'secondary', 'success', 'warning', 'danger'])
+  createObj(types, ['active', 'disabled', 'outlined', 'ghost'])
+})
+</script>
+
 <template>
   <div class="container">
     <div class="row">
@@ -46,25 +64,14 @@
       </tfoot>
     </table>
 
-    <div class="row p-v">
-      <div class="column p-right w-20 as-column">
-        <div class="btn">default</div>
-        <div class="hr">disabled buttons</div>
-        <div class="btn disabled">disabled class</div>
-        <button class="btn" disabled>disabled attribute</button>
+    <div v-for="(type, ttitle) in types" :key="ttitle" class="row m-v">
+      <div class="column w-10 center-v">
+        {{ ttitle }}
       </div>
-      <div class="column p-h w-20 as-column">
-        <div class="btn outlined">outlined</div>
-        <div class="hr">outlined disabled buttons</div>
-        <div class="btn outlined disabled">disabled class</div>
-        <button class="btn outlined" disabled>disabled attribute</button>
-      </div>
-
-      <div class="column p-h w-20 as-column">
-        <div class="btn ghost">ghost</div>
-        <div class="hr">ghost disabled buttons</div>
-        <div class="btn ghost disabled">disabled class</div>
-        <button class="btn ghost" disabled>disabled attribute</button>
+      <div class="column">
+        <div v-for="(color, ctitle) in colors" :key="ctitle" class="btn" :class="[type, color]">
+          {{ ctitle }}
+        </div>
       </div>
     </div>
   </div>

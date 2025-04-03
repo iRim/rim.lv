@@ -22,6 +22,16 @@
   &.as-column {
     flex-direction: column;
   }
+
+  &.center-v {
+    align-items: center;
+  }
+  &.center-h {
+    justify-content: center;
+  }
+  &.center {
+    @extend .center-h, .center-v;
+  }
 }
 
 // Padding classes

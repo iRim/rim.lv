@@ -1,10 +1,7 @@
 @use 'sass:color';
+@use 'sass:map';
 @use '../variables' as *;
 @use '../mixins' as *;
-
-$btn-bg: $color-primary;
-$btn-border: $color-primary;
-$btn-color: $color-white;
 
 .btn {
   display: flex;
@@ -18,37 +15,21 @@ $btn-color: $color-white;
   padding: $btn-padding;
   height: $btn-height;
   border-radius: $border-radius;
-  border: 0.1rem solid $btn-border;
-  background-color: $btn-bg;
-  color: $btn-color;
+  border-width: 0.1rem;
+  border-style: solid;
   transition: all 0.3s linear;
 
-  &.ghost,
-  &.outlined {
-    background-color: transparent;
-    color: $color-primary;
-  }
-
-  &.ghost {
-    border-color: transparent;
+  @each $name, $values in $btn-colors {
+    @include btn(
+      '&.' + $name,
+      map.get($values, 'bg'),
+      map.get($values, 'border'),
+      map.get($values, 'color')
+    );
   }
 
   &.disabled,
   &:disabled {
-    background-color: color.adjust($btn-bg, $lightness: 20%);
-    border-color: color.adjust($btn-border, $lightness: 20%);
-    color: $btn-color;
     cursor: not-allowed;
-  }
-
-  &.active,
-  &:hover:is(:not(.disabled, :disabled)) {
-    background-color: color.adjust($btn-bg, $blackness: 20%);
-    border-color: color.adjust($btn-border, $blackness: 20%);
-    color: $btn-color;
-  }
-
-  + .btn {
-    margin-top: 1rem;
   }
 }
