@@ -48,23 +48,23 @@
 
     <div class="row p-v">
       <div class="column p-right w-20 as-column">
-        <div class="btn width-100">default</div>
+        <div class="btn">default</div>
         <div class="hr">disabled buttons</div>
-        <div class="btn disabled width-100">disabled class</div>
+        <div class="btn disabled">disabled class</div>
         <button class="btn" disabled>disabled attribute</button>
       </div>
       <div class="column p-h w-20 as-column">
-        <div class="btn outlined w-100">outlined</div>
+        <div class="btn outlined">outlined</div>
         <div class="hr">outlined disabled buttons</div>
-        <div class="btn outlined disabled width-100">disabled class</div>
+        <div class="btn outlined disabled">disabled class</div>
         <button class="btn outlined" disabled>disabled attribute</button>
       </div>
 
       <div class="column p-h w-20 as-column">
-        <div class="btn link w-100">link</div>
-        <div class="hr">link disabled buttons</div>
-        <div class="btn link disabled width-100">disabled class</div>
-        <button class="btn link" disabled>disabled attribute</button>
+        <div class="btn ghost">ghost</div>
+        <div class="hr">ghost disabled buttons</div>
+        <div class="btn ghost disabled">disabled class</div>
+        <button class="btn ghost" disabled>disabled attribute</button>
       </div>
     </div>
   </div>

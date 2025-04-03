@@ -1,4 +1,10 @@
+@use 'sass:color';
 @use '../variables' as *;
+@use '../mixins' as *;
+
+$btn-bg: $color-primary;
+$btn-border: $color-primary;
+$btn-color: $color-white;
 
 .btn {
   display: flex;
@@ -11,40 +17,35 @@
   cursor: pointer;
   padding: $btn-padding;
   height: $btn-height;
-  background-color: $color-primary;
-  border: 0.1rem solid $color-primary;
   border-radius: $border-radius;
-  color: $color-white;
+  border: 0.1rem solid $btn-border;
+  background-color: $btn-bg;
+  color: $btn-color;
+  transition: all 0.3s linear;
 
-  &.disabled,
-  &:disabled {
-    background-color: rgba($color: $color-primary, $alpha: 0.5);
-    border-color: transparent;
-    color: $color-white;
-    cursor: not-allowed;
-  }
-
-  &.link,
+  &.ghost,
   &.outlined {
     background-color: transparent;
     color: $color-primary;
   }
 
-  &.outlined {
-    &.disabled,
-    &:disabled {
-      border-color: rgba($color: $color-primary, $alpha: 0.5);
-      color: rgba($color: $color-primary, $alpha: 0.5);
-    }
+  &.ghost {
+    border-color: transparent;
   }
 
-  &.link {
-    border-color: transparent;
+  &.disabled,
+  &:disabled {
+    background-color: color.adjust($btn-bg, $lightness: 20%);
+    border-color: color.adjust($btn-border, $lightness: 20%);
+    color: $btn-color;
+    cursor: not-allowed;
+  }
 
-    &.disabled,
-    &:disabled {
-      color: rgba($color: $color-primary, $alpha: 0.5);
-    }
+  &.active,
+  &:hover:is(:not(.disabled, :disabled)) {
+    background-color: color.adjust($btn-bg, $blackness: 20%);
+    border-color: color.adjust($btn-border, $blackness: 20%);
+    color: $btn-color;
   }
 
   + .btn {
