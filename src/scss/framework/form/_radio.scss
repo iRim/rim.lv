@@ -1,0 +1,98 @@
+// SCSS змінні
+$primary-color: #2196f3;
+$light-gray: #f0f0f0;
+$medium-gray: #e0e0e0;
+$border-color: #ccc;
+$disabled-background: #e9e9e9;
+$disabled-border: #d6d6d6;
+$disabled-mark: #b8b8b8;
+$control-size: 20px;
+$mark-size: 8px;
+$checkbox-mark-width: 5px;
+$checkbox-mark-height: 10px;
+$transition-time: 0.3s;
+
+%custom-control {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: Arial, sans-serif;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:focus ~ .checkmark,
+    &:focus ~ .radiomark {
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+    }
+
+    &:disabled ~ .checkmark,
+    &:disabled ~ .radiomark {
+      background-color: $disabled-background;
+      border-color: $disabled-border;
+      cursor: not-allowed;
+
+      &:after {
+        border-color: $disabled-mark;
+        background-color: $disabled-mark;
+      }
+    }
+  }
+}
+
+// Спільні властивості для маркерів
+%mark-common {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $control-size;
+  width: $control-size;
+  background-color: $light-gray;
+  border: 1px solid $border-color;
+  transition: all $transition-time ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+}
+
+// Стилізація для radio
+.custom-radio {
+  @extend %custom-control;
+
+  .radiomark {
+    @extend %mark-common;
+    border-radius: 50%;
+
+    &:after {
+      top: 6px;
+      left: 6px;
+      width: $mark-size;
+      height: $mark-size;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+
+  &:hover input ~ .radiomark {
+    background-color: $medium-gray;
+  }
+
+  input:checked ~ .radiomark {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:after {
+      display: block;
+    }
+  }
+}

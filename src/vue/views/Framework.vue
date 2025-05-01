@@ -18,6 +18,15 @@ onMounted(() => {
 
 <template>
   <div class="container">
+    <div class="hr">typography</div>
+    All icons come from the Tabler Icons set and are MIT-licensed. Visit
+    <a href="#">tabler.io/icons</a>, download any of the 5844 icons in SVG, PNG or React and use
+    them in your favourite design tools. All icons come from the Tabler Icons set and are
+    MIT-licensed. Visit <a href="#">tabler.io/icons</a>, download any of the 5844 icons in SVG, PNG
+    or React and use them in your favourite design tools.
+
+    <div class="hr">GRID</div>
+
     <div class="row">
       <div class="column w-10">
         <h1>Heading</h1>
@@ -30,6 +39,7 @@ onMounted(() => {
       </div>
     </div>
 
+    <div class="hr">table</div>
     <table class="bordered">
       <caption>
         Test table
@@ -64,15 +74,42 @@ onMounted(() => {
       </tfoot>
     </table>
 
+    <div class="hr">buttons</div>
     <div v-for="(type, ttitle) in types" :key="ttitle" class="row m-v">
       <div class="column w-10 center-v">
         {{ ttitle }}
       </div>
-      <div class="column">
+      <div class="column as-row">
         <div v-for="(color, ctitle) in colors" :key="ctitle" class="btn" :class="[type, color]">
           {{ ctitle }}
         </div>
       </div>
     </div>
+
+    <div class="hr">form elements</div>
+    <div class="row forms m-bottom">
+      <div class="column">
+        <input type="text" placeholder="Text input" />
+        <textarea placeholder="Textarea"></textarea>
+        <div class="row m-v">
+          <div class="column as-row">
+            <input type="checkbox" class="m-h" />
+            <input type="checkbox" class="m-h" checked />
+            <input type="checkbox" class="m-h" disabled />
+            <input type="checkbox" class="m-h" checked disabled />
+          </div>
+        </div>
+        <div class="row m-v">
+          <div class="column as-row">
+            <input type="radio" id="radio" name="radio" />
+          </div>
+        </div>
+
+        <input type="range" min="0" max="100" />
+        <input type="color" />
+      </div>
+      <div class="column"></div>
+    </div>
   </div>
+  <div style="margin-bottom: 100px"></div>
 </template>

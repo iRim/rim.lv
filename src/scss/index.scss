@@ -3,3 +3,18 @@
 .btn + .btn {
   margin-left: 0.5rem;
 }
+
+.forms {
+  column-gap: 2rem;
+}
+input + input,
+input + textarea,
+input + select,
+textarea + input,
+textarea + textarea,
+textarea + select,
+select + input,
+select + textarea,
+select + select {
+  margin-top: 0.5rem;
+}

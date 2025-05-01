@@ -1,30 +1,56 @@
-// $color-primary: #9b4dca !default;
-$color-primary: #f39c12 !default;
-$color-secondary: #2c3e50 !default;
+$color-text: #403d39 !default;
+$color-primary: #f4a261 !default;
+$color-secondary: $color-text !default;
 $color-border: #bdc3c7 !default;
 $color-background: #ecf0f1 !default;
-$color-white: #ffffff !default;
-$color-success: #2ecc71 !default;
-$color-danger: #e74c3c !default;
-$color-warning: #f1c40f !default;
-$color-info: #3498db !default;
-$color-light: #ecf0f1 !default;
-$color-dark: #34495e !default;
-$color-muted: #95a5a6 !default;
-$color-link: #3498db !default;
-$color-link-hover: #2980b9 !default;
-$color-link-active: #1abc9c !default;
-$color-link-disabled: #bdc3c7 !default;
-$color-link-visited: #8e44ad !default;
-$color-link-visited-hover: #7d3c98 !default;
-$color-link-visited-active: #6c3483 !default;
-$color-link-visited-disabled: #5d3c98 !default;
+$color-success: #2a9d8f !default;
+$color-warning: #e9c46a !default;
+$color-danger: #e76f51 !default;
+$color-info: #4299e1 !default;
+$color-light: #ffffff !default;
+$color-dark: #182433 !default;
+$color-muted: #6c7a91 !default;
+$color-link: $color-primary !default;
+$color-link-hover: $color-primary !default;
+$color-link-active: $color-primary !default;
+$color-link-visited: $color-primary !default;
+$color-link-disabled: $color-muted !default;
+
+:root {
+  --color-text: #{$color-text};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-border: #{$color-border};
+  --color-background: #{$color-background};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-danger: #{$color-danger};
+  --color-info: #{$color-info};
+  --color-light: #{$color-light};
+  --color-dark: #{$color-dark};
+  --color-muted: #{$color-muted};
+  --color-link: #{$color-link};
+  --color-link-hover: #{$color-link-hover};
+  --color-link-active: #{$color-link-active};
+  --color-link-visited: #{$color-link-visited};
+  --color-link-disabled: #{$color-link-disabled};
+}
+
+$default-border: 0.1rem solid $color-border !default;
+$default-border-radius: 0 !default;
+$default-form-height: 3.6rem !default;
+$default-form-height-sm: 3rem !default;
+$default-form-height-lg: 4.2rem !default;
+$default-form-padding: 0rem 1.5rem !default;
+$default-shadow: inset 0 0 0.5rem rgba($color-primary, 0.5) !default;
 
 // GRID
 $range-width: 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100 !default;
-$border-table: 0.1rem solid $color-border !default;
-$border-radius: 0 !default;
-$border-spacing: 0.3rem !default;
+
+// Table
+$table-border: $default-border !default;
+$table-border-radius: $default-border-radius !default;
+$table-spacing: 0.3rem !default;
 
 $grid-padding: (
   top: 0.5rem,
@@ -45,36 +71,59 @@ $btn-colors: (
   primary: (
     bg: $color-primary,
     border: $color-primary,
-    color: $color-white,
+    color: $color-light,
   ),
   secondary: (
     bg: $color-secondary,
     border: $color-secondary,
-    color: $color-white,
+    color: $color-light,
   ),
   success: (
     bg: $color-success,
     border: $color-success,
-    color: $color-white,
+    color: $color-light,
   ),
   warning: (
     bg: $color-warning,
     border: $color-warning,
-    color: $color-dark,
+    color: $color-light,
   ),
   danger: (
     bg: $color-danger,
     border: $color-danger,
-    color: $color-white,
+    color: $color-light,
   ),
 );
 
-$btn-padding: 0rem 1.5rem !default;
-$btn-height: 36px !default;
-$btn-height-sm: 30px !default;
-$btn-height-lg: 42px !default;
+$btn-padding: $default-form-padding !default;
+$btn-height: $default-form-height !default;
+$btn-height-sm: $default-form-height-sm !default;
+$btn-height-lg: $default-form-height-lg !default;
+$btn-border-radius: $default-border-radius !default;
 
-// default .btn
-$btn-bg: $color-primary;
-$btn-border: $color-primary;
-$btn-color: $color-white;
+// default input
+$input-bg: transparent !default;
+$input-color: $color-text !default;
+$input-border: $default-border !default;
+$input-border-radius: $default-border-radius !default;
+$input-padding: $default-form-padding !default;
+$input-height: $default-form-height !default;
+$input-height-sm: $default-form-height-sm !default;
+$input-height-lg: $default-form-height-lg !default;
+
+// default checkbox
+$checkbox-bg: $color-light !default;
+$checkbox-color: $color-text !default;
+$checkbox-border: $default-border !default;
+$checkbox-border-radius: $default-border-radius !default;
+$checkbox-padding: $default-form-padding !default;
+$checkbox-width: calc($default-form-height / 2) !default;
+$checkbox-height: $checkbox-width !default;
+$checkbox-mark-width: 0.5rem !default;
+$checkbox-mark-height: 1rem !default;
+$checkbox-mark-border-width: 0.2rem !default;
+$radio-mark-size: 0.8rem !default;
+$focus-shadow-color: rgba($color-primary, 0.3) !default;
+
+// Transition
+$transition: all 0.3s linear !default;

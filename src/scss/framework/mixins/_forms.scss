@@ -1,0 +1,119 @@
+@use 'sass:color';
+@use '../variables' as *;
+@use 'typography' as *;
+
+// Create .btn colors
+@mixin btn($name, $bg, $border: transparent, $color: $color-white) {
+  #{$name} {
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+
+    &.ghost,
+    &.outlined {
+      background-color: transparent;
+      color: $bg;
+    }
+
+    &.ghost {
+      border-color: transparent;
+    }
+
+    &.disabled,
+    &:disabled {
+      background-color: lightness($color: $bg);
+      border-color: lightness($color: $border);
+      color: $color;
+    }
+
+    &.active,
+    &:hover:is(:not(.disabled, :disabled)) {
+      background-color: darkness($color: $bg);
+      border-color: darkness($color: $border);
+      color: $color;
+    }
+  }
+}
+
+// @mixin checkbox-base() {
+//   appearance: none;
+//   height: $checkbox-height;
+//   width: $checkbox-width;
+//   vertical-align: middle;
+//   position: relative;
+//   cursor: pointer;
+//   background-color: $checkbox-bg;
+//   border: $checkbox-border;
+//   transition: $transition;
+//   margin: 0;
+
+//   &:hover {
+//     background-color: darkness($color: $color-primary);
+//   }
+
+//   &:checked {
+//     background-color: $color-primary;
+//     border-color: $color-primary;
+//   }
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: $default-shadow;
+//   }
+
+//   &:disabled {
+//     $disabled-color: lightness(
+//       $color: $color-primary,
+//     );
+//     background-color: $disabled-color;
+//     border-color: $disabled-color;
+//     cursor: not-allowed;
+
+//     &:checked::after {
+//       border-color: $color-primary;
+//       background-color: $color-primary;
+//     }
+//   }
+// }
+
+@mixin checkbox-base() {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  appearance: none;
+  height: $checkbox-height;
+  width: $checkbox-width;
+  background-color: $checkbox-bg;
+  border: $checkbox-border;
+  transition: $transition;
+  margin: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+
+  &:checked {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $default-shadow;
+  }
+
+  &:disabled {
+    $disabled-color: lightness(
+      $color: $color-primary,
+    );
+    background-color: $disabled-color;
+    border-color: $disabled-color;
+    cursor: not-allowed;
+
+    &:checked::after {
+      border-color: $color-primary;
+      background-color: $color-primary;
+    }
+  }
+}

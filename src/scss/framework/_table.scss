@@ -1,5 +1,5 @@
 @use 'variables' as *;
-@use 'mixins' as *;
+@use 'mixins/index.scss' as *;
 
 table {
   @include table-collapse();
@@ -12,7 +12,7 @@ table {
     > th,
     > td {
       padding: 0.5rem 1rem;
-      @include bordered($border-table, bottom);
+      @include bordered($table-border, bottom);
     }
 
     > th {
@@ -24,16 +24,16 @@ table {
     tr {
       > th,
       > td {
-        @include bordered($border-table, bottom, right);
+        @include bordered($table-border, bottom, right);
         &:first-child {
-          @include bordered($border-table, left);
+          @include bordered($table-border, left);
         }
       }
 
       &:first-child {
         > th,
         td {
-          @include bordered($border-table, top);
+          @include bordered($table-border, top);
         }
       }
     }
@@ -54,6 +54,6 @@ table {
     }
   }
   &.spaced {
-    border-spacing: $border-spacing;
+    border-spacing: $table-spacing;
   }
 }

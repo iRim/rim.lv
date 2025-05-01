@@ -14,10 +14,10 @@
   cursor: pointer;
   padding: $btn-padding;
   height: $btn-height;
-  border-radius: $border-radius;
+  border-radius: $btn-border-radius;
   border-width: 0.1rem;
   border-style: solid;
-  transition: all 0.3s linear;
+  transition: $transition;
 
   @each $name, $values in $btn-colors {
     @include btn(

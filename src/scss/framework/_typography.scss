@@ -1,5 +1,5 @@
 @use 'variables' as *;
-@use 'mixins' as *;
+@use 'mixins/index.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 b,

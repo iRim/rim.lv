@@ -1,6 +1,8 @@
+@use 'variables';
 @use 'reset';
-@use 'typography';
 @use 'base';
+@use 'typography';
+@use 'links';
 @use 'grid';
 @use 'table';
 @use 'form/index.scss';

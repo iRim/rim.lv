@@ -1,5 +1,5 @@
 @use 'variables' as *;
-@use 'mixins' as *;
+@use 'mixins/index.scss' as *;
 
 @include generate-each-classes('.w-', 'width');
 
