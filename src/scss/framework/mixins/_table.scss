@@ -1,9 +1,0 @@
-@use '../variables' as *;
-
-@mixin table-collapse() {
-  @if $table-border-radius > 0 {
-    border-collapse: separate;
-  } @else {
-    border-collapse: collapse;
-  }
-}
