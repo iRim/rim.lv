@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/vue/views/Home.vue'
-import Framework from '@/vue/views/Framework.vue'
 import NotFound from './vue/views/NotFound.vue'
 
 const routes = [
@@ -9,12 +8,6 @@ const routes = [
     name: 'home',
     component: Home,
   },
-  {
-    path: '/framework',
-    name: 'framework',
-    component: Framework,
-  },
-
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',

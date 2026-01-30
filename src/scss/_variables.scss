@@ -1,0 +1,35 @@
+$colors: (
+  primary: #745fb5,
+  secondary: #111111,
+  background: #fafafc,
+  text: #111111,
+);
+
+$fonts: (
+  family: 'Cuprum, sans-serif',
+  weight: 400,
+  size: 16px,
+);
+
+$container: 1200px;
+$line-height: 1.5;
+
+// $font-family-base:
+//   'Cuprum',
+//   system-ui,
+//   -apple-system,
+//   BlinkMacSystemFont,
+//   sans-serif;
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $fonts {
+    --font-#{$name}: #{$value};
+  }
+
+  --container: #{$container};
+  --line-height: #{$line-height};
+}

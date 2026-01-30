@@ -31,10 +31,6 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'favicon.ico',
-          dest: '',
-        },
-        {
           src: '.htaccess',
           dest: '',
         },

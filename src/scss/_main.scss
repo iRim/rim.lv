@@ -1,0 +1,52 @@
+@forward 'variables';
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  overflow: hidden;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  font-style: normal;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .container {
+    width: 49rem;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .container {
+    width: 65rem;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .container {
+    width: 76rem;
+  }
+}
