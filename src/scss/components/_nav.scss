@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  > a {
+    &.logo {
+      width: 4rem;
+      height: 4rem;
+    }
+    &.icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+    }
+    &.right {
+      margin-left: auto;
+    }
+  }
+}

@@ -1,12 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/vue/views/Home.vue'
+import Resume from '@/vue/views/Resume.vue'
+import Cheatsheets from './vue/views/Cheatsheets.vue'
+import Contact from './vue/views/Contact.vue'
 import NotFound from './vue/views/NotFound.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'resume',
+    component: Resume,
+  },
+  {
+    path: '/cheatsheets',
+    name: 'cheatsheets',
+    component: Cheatsheets,
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
   },
   {
     path: '/:pathMatch(.*)*',
@@ -18,4 +30,5 @@ const routes = [
 export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  linkActiveClass: 'active',
 })

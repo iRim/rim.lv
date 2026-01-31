@@ -1,25 +1,18 @@
 $colors: (
   primary: #745fb5,
-  secondary: #111111,
+  secondary: #3f3d56,
   background: #fafafc,
-  text: #111111,
+  text: #334455,
 );
 
 $fonts: (
-  family: 'Cuprum, sans-serif',
+  family: 'Ubuntu, sans-serif',
   weight: 400,
   size: 16px,
 );
 
 $container: 1200px;
 $line-height: 1.5;
-
-// $font-family-base:
-//   'Cuprum',
-//   system-ui,
-//   -apple-system,
-//   BlinkMacSystemFont,
-//   sans-serif;
 
 :root {
   @each $name, $value in $colors {
