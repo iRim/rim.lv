@@ -7,7 +7,7 @@ import ResumeBlock from '../components/ResumeBlock.vue'
 function downloadPdf() {
   const el = document.querySelector('#app')
   const clone = el.cloneNode(true)
-  const resume = clone.querySelector('#resume')
+  const resume = clone.querySelector('.container')
 
   resume.classList.add('pdf-mode')
 
@@ -15,16 +15,16 @@ function downloadPdf() {
   clone.style.left = '-9999px'
   clone.style.top = '0'
 
+  const invisible = document.createElement('div')
+  invisible.classList.add('pdf-bottom-spacer')
+  resume.appendChild(invisible)
+
   document.body.appendChild(clone)
 
   html2pdf()
     .set({
       margin: 10,
       filename: 'Ihor_Rusenko_Resume.pdf',
-      image: {
-        type: 'jpeg',
-        quality: 0.98,
-      },
       html2canvas: {
         scale: 2,
         useCORS: true,
@@ -34,14 +34,12 @@ function downloadPdf() {
         format: 'a4',
         orientation: 'portrait',
       },
-      pagebreak: {
-        mode: ['css', 'legacy'],
-      },
+      enableLinks: true,
     })
     .from(resume)
     .save()
     .then(() => {
-      document.body.removeChild(clone)
+      // document.body.removeChild(clone)
     })
 }
 </script>
@@ -49,7 +47,7 @@ function downloadPdf() {
 <template>
   <div class="row">
     <h1>{{ header.title }}'s Resume</h1>
-    <button class="right" @click="downloadPdf">Download as PDF</button>
+    <button class="right no-print" @click="downloadPdf">Download as PDF</button>
   </div>
   <p v-html="header.description"></p>
 

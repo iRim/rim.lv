@@ -1,0 +1,40 @@
+.pdf-mode {
+  .no-print {
+    display: none !important;
+  }
+
+  nav > a,
+  .divider > span {
+    margin-bottom: 1rem;
+  }
+
+  article,
+  .badges {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .badges {
+    gap: 0;
+
+    > * {
+      padding: 0;
+      border: none;
+
+      &::after {
+        content: ', ';
+        margin-right: 0.5rem;
+      }
+
+      &:last-child::after {
+        content: '.';
+      }
+    }
+  }
+}
+
+// fix
+.pdf-bottom-spacer {
+  height: 60px;
+  display: block;
+}

@@ -51,13 +51,9 @@ article {
   }
 }
 
-.pdf-mode * {
-  color: brown !important;
-}
-
-@media print {
-  @page {
-    size: A4;
-    margin: 12mm;
-  }
-}
+// @media print {
+//   @page {
+//     size: A4;
+//     margin: 12mm;
+//   }
+// }

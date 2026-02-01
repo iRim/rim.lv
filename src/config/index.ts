@@ -1,7 +1,9 @@
 import { faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { WorkExperienceInterface, SocialsInterface } from './interfaces'
 
 export const contacts = {
+  site: 'https://rim.lv',
   email: 'rusenko.i@outlook.com',
 }
 
@@ -20,6 +22,18 @@ export const header = {
 }
 
 export const socials: SocialsInterface[] = [
+  {
+    name: 'Site',
+    url: contacts.site,
+    icon: faGlobe,
+    show: false,
+  },
+  {
+    name: 'Email',
+    url: 'mailto:' + contacts.email,
+    icon: faEnvelope,
+    show: false,
+  },
   {
     name: 'Telegram',
     url: 'https://t.me/Rusenko_I',

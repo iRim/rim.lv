@@ -29,6 +29,7 @@ interface SocialsInterface {
   name: string
   url: string
   icon: IconDefinition
+  show?: boolean
 }
 
 export type { WorkExperienceInterface, SocialsInterface }
