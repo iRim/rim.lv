@@ -32,14 +32,13 @@ function downloadPdf() {
       jsPDF: {
         unit: 'mm',
         format: 'a4',
-        orientation: 'portrait',
       },
       enableLinks: true,
     })
     .from(resume)
     .save()
     .then(() => {
-      // document.body.removeChild(clone)
+      document.body.removeChild(clone)
     })
 }
 </script>

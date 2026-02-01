@@ -3,7 +3,6 @@ import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { WorkExperienceInterface, SocialsInterface } from './interfaces'
 
 export const contacts = {
-  site: 'https://rim.lv',
   email: 'rusenko.i@outlook.com',
 }
 
@@ -23,30 +22,27 @@ export const header = {
 
 export const socials: SocialsInterface[] = [
   {
-    name: 'Site',
-    url: contacts.site,
-    icon: faGlobe,
-    show: false,
-  },
-  {
     name: 'Email',
     url: 'mailto:' + contacts.email,
+    title: contacts.email,
     icon: faEnvelope,
-    show: false,
   },
   {
     name: 'Telegram',
     url: 'https://t.me/Rusenko_I',
+    title: '/Rusenko_I',
     icon: faTelegram,
   },
   {
     name: 'GitHub',
     url: 'https://github.com/iRim',
+    title: '/iRim',
     icon: faGithub,
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/rusenko-i/',
+    title: '/in/rusenko-i',
     icon: faLinkedin,
   },
 ]
