@@ -40,4 +40,8 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+
+  define: {
+    __BUILD_DATE__: JSON.stringify(new Date().toUTCString()),
+  },
 })

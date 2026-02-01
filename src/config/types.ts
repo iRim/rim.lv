@@ -23,7 +23,7 @@ type Technology =
   | 'Yii'
   | 'Phalcon'
   | 'Slim'
-  | 'Fat-Free Framework'
+  | 'Fat-Free'
   | 'Kohana'
   | 'CodeIgniter'
   | 'Spiral + RoadRunner'
@@ -41,7 +41,7 @@ type Technology =
   | 'Redis'
   | 'Memcached'
   | 'ScyllaDB'
-  | 'ElasticSearch'
+  | 'Elasticsearch'
   | 'CouchDB'
   | 'Sphinx'
 
