@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Resume from '@/vue/views/Resume.vue'
 import Cheatsheets from './vue/views/Cheatsheets.vue'
-import Contact from './vue/views/Contact.vue'
 import NotFound from './vue/views/NotFound.vue'
 
 const routes = [
@@ -14,11 +13,6 @@ const routes = [
     path: '/cheatsheets',
     name: 'cheatsheets',
     component: Cheatsheets,
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact,
   },
   {
     path: '/:pathMatch(.*)*',

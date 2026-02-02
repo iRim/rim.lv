@@ -17,8 +17,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
     </RouterLink>
     <div class="links">
       <RouterLink :to="{ name: 'resume' }" class="no-print">Resume</RouterLink>
-      <!-- <RouterLink :to="{ name: 'cheatsheets' }" class="no-print">Cheatsheets</RouterLink> -->
-      <RouterLink :to="{ name: 'contact' }" class="no-print">Contact</RouterLink>
+      <RouterLink :to="{ name: 'cheatsheets' }" class="no-print">Cheatsheets</RouterLink>
 
       <template v-for="(social, key) in socials" :key="key">
         <a

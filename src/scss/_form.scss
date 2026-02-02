@@ -1,0 +1,7 @@
+@use 'mixin' as *;
+
+button {
+  @include btn;
+  font-size: 1rem;
+  cursor: pointer;
+}
