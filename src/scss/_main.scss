@@ -1,4 +1,4 @@
-@forward 'variables';
+@use 'variables' as *;
 
 a {
   text-decoration: none;
@@ -61,6 +61,17 @@ button {
   color: var(--color-text);
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-light);
+  }
+}
+
+main {
+  min-height: calc(100vh - $nav_height - $footer_height - $nav_margin * 2 - $footer_margin);
 }
 
 @media only screen and (max-width: 1999px) {

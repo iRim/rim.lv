@@ -1,5 +1,7 @@
 <script setup>
 import html2pdf from 'html2pdf.js'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
 import { header, workExpirience, languages } from '@/config'
 import Divider from '../components/Divider.vue'
 import ResumeBlock from '../components/ResumeBlock.vue'
@@ -46,7 +48,9 @@ function downloadPdf() {
 <template>
   <div class="row">
     <h1>{{ header.title }}'s Resume</h1>
-    <button class="right no-print" @click="downloadPdf">Download as PDF</button>
+    <button class="right no-print" @click="downloadPdf">
+      Download as <FontAwesomeIcon :icon="faFilePdf" size="lg" />
+    </button>
   </div>
   <p v-html="header.description"></p>
 
