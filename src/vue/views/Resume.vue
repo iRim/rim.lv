@@ -49,7 +49,8 @@ function downloadPdf() {
   <div class="row">
     <h1>{{ header.title }}'s Resume</h1>
     <button class="right no-print" @click="downloadPdf">
-      Download as <FontAwesomeIcon :icon="faFilePdf" size="lg" />
+      Download as
+      <FontAwesomeIcon :icon="faFilePdf" size="lg" />
     </button>
   </div>
   <p v-html="header.description"></p>
