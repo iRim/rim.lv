@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  > .logo {
+    width: 4rem;
+    height: 4rem;
+
+    > img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  > .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-left: auto;
+
+    a.icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+
+      > span {
+        display: none;
+      }
+    }
+  }
+}

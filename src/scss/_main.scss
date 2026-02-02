@@ -1,12 +1,23 @@
 @forward 'variables';
 
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+
+  &.active,
+  &:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
+
 body {
-  min-height: 100vh;
+  min-height: calc(100vh - 1rem);
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  color: var(--color-primary);
+  color: var(--color-text);
   background-color: var(--color-background);
-  overflow: hidden;
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-optical-sizing: auto;
@@ -21,32 +32,40 @@ body {
   max-width: 1200px;
   padding-right: 1rem;
   padding-left: 1rem;
-  height: 100%;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+h1 + p {
+  font-size: 1.25rem;
 }
 
-@media only screen and (min-width: 48em) {
+.right {
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1999px) {
   .container {
-    width: 49rem;
-  }
-}
-
-@media only screen and (min-width: 64em) {
-  .container {
-    width: 65rem;
-  }
-}
-
-@media only screen and (min-width: 75em) {
-  .container {
-    width: 76rem;
+    width: 100%;
+    max-width: 100%;
   }
 }

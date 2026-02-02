@@ -1,0 +1,57 @@
+.pdf-mode {
+  .no-print {
+    display: none !important;
+  }
+
+  .divider > span {
+    margin-bottom: 1rem;
+  }
+
+  nav > .links > a.icon {
+    width: auto;
+
+    > span {
+      display: inline-block;
+      margin-left: 0.1rem;
+    }
+  }
+
+  .badges {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .badges {
+    gap: 0;
+
+    &::before {
+      content: 'Stack: ';
+      margin-right: 0.5rem;
+      font-weight: 500;
+    }
+
+    > * {
+      padding: 0;
+      border: none;
+
+      &::after {
+        content: ', ';
+        margin-right: 0.5rem;
+      }
+
+      &:last-child::after {
+        content: '.';
+      }
+    }
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+// fix
+.pdf-bottom-spacer {
+  height: 60px;
+  display: block;
+}

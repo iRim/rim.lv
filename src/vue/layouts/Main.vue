@@ -1,10 +1,17 @@
 <script setup>
-import Header from '../components/Header.vue'
+import { useRoute } from 'vue-router'
+import Nav from '../components/Nav.vue'
+import Footer from '../components/Footer.vue'
+
+const route = useRoute()
 </script>
 
 <template>
   <div class="container">
-    <Header />
-    <slot />
+    <Nav />
+    <main :id="route.name">
+      <slot />
+    </main>
+    <Footer />
   </div>
 </template>
