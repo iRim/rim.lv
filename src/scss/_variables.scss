@@ -14,6 +14,10 @@ $fonts: (
 
 $container: 1200px;
 $line-height: 1.5;
+$nav_height: 4rem;
+$nav_margin: 1rem;
+$footer_height: $nav_height;
+$footer_margin: 2rem;
 
 :root {
   @each $name, $value in $colors {

@@ -1,10 +1,12 @@
+@use '../variables' as *;
+
 nav {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  height: 4rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  height: $nav_height;
+  margin-top: $nav_margin;
+  margin-bottom: $nav_margin;
 
   > .logo {
     width: 4rem;

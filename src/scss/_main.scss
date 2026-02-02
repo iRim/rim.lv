@@ -1,4 +1,4 @@
-@forward 'variables';
+@use 'variables' as *;
 
 a {
   text-decoration: none;
@@ -32,7 +32,6 @@ body {
   max-width: 1200px;
   padding-right: 1rem;
   padding-left: 1rem;
-  height: 100%;
 }
 
 h1 + p {
@@ -69,6 +68,10 @@ button {
     border-color: var(--color-primary);
     color: var(--color-light);
   }
+}
+
+main {
+  min-height: calc(100vh - $nav_height - $footer_height - $nav_margin * 2 - $footer_margin);
 }
 
 @media only screen and (max-width: 1999px) {

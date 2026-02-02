@@ -1,11 +1,11 @@
-@forward 'variables';
+@use 'variables' as *;
 
 footer {
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  height: 4rem;
-  margin-top: 2rem;
+  height: $footer_height;
+  margin-top: $footer_margin;
   border-top: 1px solid var(--color-primary);
 }
