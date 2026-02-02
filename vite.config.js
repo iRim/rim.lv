@@ -3,8 +3,6 @@ import path from 'node:path'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const ASSET_URL = process.env.ASSET_URL || ''
 const PUBLIC_PATH = fileURLToPath(new URL('./public', import.meta.url))
@@ -27,19 +25,7 @@ export default defineConfig({
     manifest: true,
   },
 
-  plugins: [
-    viteStaticCopy({
-      targets: [
-        {
-          src: '.htaccess',
-          dest: '',
-        },
-      ],
-    }),
-
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [vue()],
 
   define: {
     __BUILD_DATE__: JSON.stringify(new Date().toUTCString()),
