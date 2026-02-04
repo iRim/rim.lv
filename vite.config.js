@@ -22,6 +22,7 @@ export default defineConfig({
     outDir: PUBLIC_PATH,
     emptyOutDir: true,
     manifest: true,
+    target: 'esnext',
   },
 
   plugins: [vue()],
