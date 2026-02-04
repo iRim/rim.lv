@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import { socials, header, contacts } from '@/config'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -7,18 +6,15 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 <template>
   <nav role="navigation">
-    <RouterLink :to="{ name: 'resume' }" class="logo">
+    <div class="logo">
       <img
         src="@img/logo.png"
         rel="noopener noreferrer"
         :aria-label="header.title"
         :alt="header.title"
       />
-    </RouterLink>
+    </div>
     <div class="links">
-      <!-- <RouterLink :to="{ name: 'resume' }" class="no-print">Resume</RouterLink>
-      <RouterLink :to="{ name: 'cheatsheets' }" class="no-print">Cheatsheets</RouterLink> -->
-
       <template v-for="(social, key) in socials" :key="key">
         <a
           :href="social.url"
