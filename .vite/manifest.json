@@ -1,4 +1,8 @@
 {
+  "../fonts/Ubuntu.woff2": {
+    "file": "assets/Ubuntu-CfAaIRn7.woff2",
+    "src": "../fonts/Ubuntu.woff2"
+  },
   "../img/logo.png": {
     "file": "assets/logo-hVBfu8UO.png",
     "src": "../img/logo.png"
@@ -28,15 +32,16 @@
     "src": "favicon/favicon.ico"
   },
   "index.html": {
-    "file": "assets/index-BXcXki1g.js",
+    "file": "assets/index-DCfUyZID.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
     "css": [
-      "assets/index-Daoa8fWX.css"
+      "assets/index-DxKe1uLD.css"
     ],
     "assets": [
       "assets/logo-hVBfu8UO.png",
+      "assets/Ubuntu-CfAaIRn7.woff2",
       "assets/favicon-8gqHvsvL.ico",
       "assets/android-chrome-512x512-D_5E_Doh.png",
       "assets/android-chrome-192x192-Bht16XlJ.png",
