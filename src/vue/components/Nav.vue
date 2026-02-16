@@ -6,14 +6,12 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 <template>
   <nav role="navigation">
-    <div class="logo">
-      <img
-        src="@img/logo.png"
-        rel="noopener noreferrer"
-        :aria-label="header.title"
-        :alt="header.title"
-      />
-    </div>
+    <div
+      class="photo"
+      rel="noopener noreferrer"
+      :aria-label="header.title"
+      :alt="header.title"
+    ></div>
     <div class="links">
       <template v-for="(social, key) in socials" :key="key">
         <a

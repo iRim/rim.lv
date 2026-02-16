@@ -8,7 +8,7 @@ const PUBLIC_PATH = fileURLToPath(new URL('./public', import.meta.url))
 const SRC_PATH = fileURLToPath(new URL('./src', import.meta.url))
 
 export default defineConfig({
-  root: path.join(SRC_PATH, 'static'),
+  // root: path.join(SRC_PATH, 'static'),
 
   resolve: {
     alias: {
@@ -23,6 +23,7 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
     target: 'esnext',
+    sourcemap: true,
   },
 
   plugins: [vue()],
