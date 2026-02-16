@@ -8,9 +8,16 @@ nav {
   margin-top: $nav_margin;
   margin-bottom: $nav_margin;
 
-  > .logo {
+  > .photo {
+    flex-shrink: 0;
     width: 4rem;
     height: 4rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    background-image: url(@img/photo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 
     > img {
       width: inherit;
