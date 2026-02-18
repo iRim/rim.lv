@@ -1,10 +1,14 @@
 <script setup>
+import Divider from '../components/Divider.vue'
+import ResumeBlock from '../components/ResumeBlock.vue'
+
 import html2pdf from 'html2pdf.js'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
-import { header, workExpirience, languages } from '@/config'
-import Divider from '../components/Divider.vue'
-import ResumeBlock from '../components/ResumeBlock.vue'
+import { workExpirience, languages } from '@/config'
+import { useHeader } from '@/utils/header'
+
+const header = useHeader()
 
 function downloadPdf() {
   const el = document.querySelector('#app')
@@ -47,7 +51,7 @@ function downloadPdf() {
 
 <template>
   <div class="row">
-    <h1>{{ header.title }}'s Resume</h1>
+    <h1>{{ header.title || contacts.fullname }}'s Resume</h1>
     <button class="right no-print" @click="downloadPdf">
       Download as
       <FontAwesomeIcon :icon="faFilePdf" size="lg" />

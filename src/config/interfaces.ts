@@ -1,6 +1,11 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import type { Position, Technology, TeamCounts } from './types'
 
+interface HeaderInterface {
+  title?: string
+  description: string
+}
+
 interface BaseWorkExperienceInterface {
   // position: Position
   period: {
@@ -32,4 +37,4 @@ interface SocialsInterface {
   icon: IconDefinition
 }
 
-export type { WorkExperienceInterface, SocialsInterface }
+export type { WorkExperienceInterface, SocialsInterface, HeaderInterface }

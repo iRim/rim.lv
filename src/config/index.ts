@@ -1,8 +1,9 @@
 import { faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { WorkExperienceInterface, SocialsInterface } from './interfaces'
+import { WorkExperienceInterface, SocialsInterface, HeaderInterface } from './interfaces'
 
 export const contacts = {
+  fullname: 'Ihor Rusenko',
   email: 'rusenko.i@outlook.com',
 }
 
@@ -12,12 +13,20 @@ export const languages = {
   Russian: 'Fluent',
 }
 
-export const header = {
-  title: 'Ihor Rusenko',
-  description:
-    'Full-stack web developer with many years of experience in commercial and freelance projects.' +
-    '<br>' +
-    'I develop, modernize, and maintain web applications with a focus on stability and scalability.',
+export const headers: Record<string, HeaderInterface> = {
+  resume: {
+    title: 'Ihor Rusenko',
+    description:
+      'Full-stack web developer with many years of experience in commercial and freelance projects.' +
+      '<br>' +
+      'I develop, modernize, and maintain web applications with a focus on stability and scalability.',
+  },
+  vacancies: {
+    description:
+      'The service helps structure the job search process and track personal activity.' +
+      '<br>' +
+      'Here, selected vacancies are collected with the ability to record application status and next steps.',
+  },
 }
 
 export const socials: SocialsInterface[] = [
