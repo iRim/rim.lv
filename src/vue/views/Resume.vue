@@ -5,7 +5,7 @@ import ResumeBlock from '../components/ResumeBlock.vue'
 import html2pdf from 'html2pdf.js'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
-import { workExpirience, languages } from '@/config'
+import { coreTechStack, workExpirience, languages } from '@/config'
 import { useHeader } from '@/utils/header'
 
 const header = useHeader()
@@ -50,7 +50,7 @@ function downloadPdf() {
 </script>
 
 <template>
-  <div class="row">
+  <div class="flex row">
     <h1>{{ header.title || contacts.fullname }}'s Resume</h1>
     <button class="right no-print" @click="downloadPdf">
       Download as
@@ -59,18 +59,25 @@ function downloadPdf() {
   </div>
   <p v-html="header.description"></p>
 
-  <div>
-    <Divider>Work experience</Divider>
-    <div class="column-reverse">
-      <ResumeBlock v-for="(item, key) in workExpirience" :key="key" :item="item" />
+  <Divider>Core Tech Stack (Recent Years Focus)</Divider>
+  <article>
+    <div class="badges stack">
+      <span v-for="tech in coreTechStack" :key="tech">
+        {{ tech }}
+      </span>
     </div>
+  </article>
 
-    <Divider>Languages</Divider>
-    <div class="languages">
-      <div v-for="(level, language) in languages" :key="language">
-        <h4>{{ language }}</h4>
-        <span>{{ level }}</span>
-      </div>
+  <Divider>Work experience</Divider>
+  <div id="experiences">
+    <ResumeBlock v-for="(item, key) in workExpirience" :key="key" :item="item" />
+  </div>
+
+  <Divider>Languages</Divider>
+  <div class="languages">
+    <div v-for="(level, language) in languages" :key="language">
+      <h4>{{ language }}</h4>
+      <span>{{ level }}</span>
     </div>
   </div>
 </template>

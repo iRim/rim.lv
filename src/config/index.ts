@@ -1,6 +1,7 @@
 import { faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { WorkExperienceInterface, SocialsInterface, HeaderInterface } from './interfaces'
+import { Technology } from './types'
 
 export const contacts = {
   fullname: 'Ihor Rusenko',
@@ -56,6 +57,19 @@ export const socials: SocialsInterface[] = [
   },
 ]
 
+export const coreTechStack: Technology[] = [
+  'PHP',
+  'Laravel',
+  'JavaScript',
+  'TypeScript',
+  'Vue.js',
+  'React',
+  'MySQL',
+  'Redis',
+  'HTML5',
+  'CSS3',
+]
+
 export const workExpirience: WorkExperienceInterface[] = [
   {
     company: 'Kraser',
@@ -93,7 +107,7 @@ export const workExpirience: WorkExperienceInterface[] = [
       to: new Date(2018, 4),
     },
     description:
-      'More than 10 small and medium projects. servicebox.ru – is a catalog of masters and companies in Russia providing service and repair, answer technical questions of users.',
+      'More than 10 small and medium projects. servicebox.ru – is a catalog of masters and companies providing service and repair, answer technical questions of users.',
     technologies: [
       'PHP',
       'Laravel',
@@ -159,6 +173,7 @@ export const workExpirience: WorkExperienceInterface[] = [
       'PHP',
       'Laravel',
       'JavaScript',
+      'TypeScript',
       'Vue.js',
       'MySQL',
       'MongoDB',
@@ -181,6 +196,7 @@ export const workExpirience: WorkExperienceInterface[] = [
       'PHP',
       'Laravel',
       'JavaScript',
+      'TypeScript',
       'jQuery',
       'Vue.js',
       'MySQL',
@@ -200,7 +216,17 @@ export const workExpirience: WorkExperienceInterface[] = [
     },
     description:
       'Full-stack development of a commercial trading platform, covering backend logic, front-end implementation, responsive layouts, and cross-browser compatibility.',
-    technologies: ['PHP', 'Laravel', 'JavaScript', 'Vue.js', 'MySQL', 'Redis', 'HTML5', 'CSS3'],
+    technologies: [
+      'PHP',
+      'Laravel',
+      'JavaScript',
+      'TypeScript',
+      'Vue.js',
+      'MySQL',
+      'Redis',
+      'HTML5',
+      'CSS3',
+    ],
   },
 
   {
@@ -217,6 +243,7 @@ export const workExpirience: WorkExperienceInterface[] = [
       'Fat-Free',
       'Spiral + RoadRunner',
       'JavaScript',
+      'TypeScript',
       'Vue.js',
       'React',
       'jQuery',

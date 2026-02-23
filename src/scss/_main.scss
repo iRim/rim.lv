@@ -42,15 +42,24 @@ h1 + p {
   margin-left: auto;
 }
 
-.row {
+.flex {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
   align-items: center;
 }
+.row {
+  flex-direction: row;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.column {
+  flex-direction: column;
+}
 .column-reverse {
-  display: flex;
   flex-direction: column-reverse;
+}
+.space-between {
+  justify-content: space-between;
 }
 
 main {

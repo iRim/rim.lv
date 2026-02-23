@@ -12,12 +12,9 @@
     }
   }
 
-  .badges {
+  .badges:not(.stack) {
     page-break-inside: avoid;
     break-inside: avoid;
-  }
-
-  .badges {
     gap: 0;
 
     &::before {
@@ -30,6 +27,7 @@
       padding: 0;
       border: none;
       background-color: inherit;
+      min-height: auto;
 
       &::after {
         content: ', ';

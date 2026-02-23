@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'reset';
-@use 'components/index.scss';
 @use 'form';
 @use 'main';
 @use 'footer';
+@use 'components/index.scss' as *;
+@use 'pages/index.scss' as *;

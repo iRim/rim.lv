@@ -1,0 +1,46 @@
+@forward '../variables';
+@use '../mixin' as *;
+
+#experiences {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &:last-child {
+      margin-top: 0;
+    }
+
+    > * {
+      margin: 0;
+    }
+
+    > h4 {
+      font-weight: 600;
+    }
+
+    > h4 + *,
+    > div + * {
+      margin-top: 0.5rem;
+    }
+
+    > h4 > span {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.languages {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  h4 {
+    margin: 0;
+  }
+}

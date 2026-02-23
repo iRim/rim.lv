@@ -1,5 +1,5 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import type { Position, Technology, TeamCounts } from './types'
+import type { Technology } from './types'
 
 interface HeaderInterface {
   title?: string
@@ -7,14 +7,11 @@ interface HeaderInterface {
 }
 
 interface BaseWorkExperienceInterface {
-  // position: Position
   period: {
     from: Date
     to?: Date
   }
-  // nda: boolean
   description: string
-  // team?: TeamCounts
   technologies: Technology[]
 }
 

@@ -3,14 +3,15 @@
 @mixin btn {
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  border: 1px solid var(--color-text);
+  border: 1px solid var(--color-primary);
   background-color: var(--color-background);
-  color: var(--color-text);
+  color: var(--color-primary);
   transition: all 0.3s ease;
+  min-height: 2rem;
+  line-height: unset;
 
   &:hover {
     background-color: var(--color-primary);
-    border-color: var(--color-primary);
     color: var(--color-light);
   }
 }

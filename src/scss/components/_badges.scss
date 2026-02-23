@@ -1,0 +1,17 @@
+@use '../mixin' as *;
+
+.badges {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  > * {
+    @include btn;
+
+    &:hover {
+      background-color: inherit;
+      color: var(--color-primary);
+    }
+  }
+}
