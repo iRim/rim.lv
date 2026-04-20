@@ -15,7 +15,7 @@ export const languages = {
 export const header = {
   title: 'Ihor Rusenko',
   description:
-    'Full-stack web developer with many years of experience in commercial and freelance projects.' +
+    'Full-stack web developer with experience in commercial and freelance projects since 2010.' +
     '<br>' +
     'I develop, modernize, and maintain web applications with a focus on stability and scalability.',
 }
