@@ -1,5 +1,4 @@
 <script setup>
-import html2pdf from 'html2pdf.js'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
 import { header, workExpirience, languages } from '@/config'
@@ -7,41 +6,11 @@ import Divider from '../components/Divider.vue'
 import ResumeBlock from '../components/ResumeBlock.vue'
 
 function downloadPdf() {
-  const el = document.querySelector('#app')
-  const clone = el.cloneNode(true)
-  const resume = clone.querySelector('.container')
-
-  resume.classList.add('pdf-mode')
-
-  clone.style.position = 'fixed'
-  clone.style.left = '-9999px'
-  clone.style.top = '0'
-
-  const invisible = document.createElement('div')
-  invisible.classList.add('pdf-bottom-spacer')
-  resume.appendChild(invisible)
-
-  document.body.appendChild(clone)
-
-  html2pdf()
-    .set({
-      margin: 10,
-      filename: 'Ihor_Rusenko_Resume.pdf',
-      html2canvas: {
-        scale: 2,
-        useCORS: true,
-      },
-      jsPDF: {
-        unit: 'mm',
-        format: 'a4',
-      },
-      enableLinks: true,
-    })
-    .from(resume)
-    .save()
-    .then(() => {
-      document.body.removeChild(clone)
-    })
+  let filename = 'Ihor_Rusenko_Resume.pdf'
+  const link = document.createElement('a')
+  link.href = filename
+  link.download = filename
+  link.click()
 }
 </script>
 
