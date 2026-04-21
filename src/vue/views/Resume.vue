@@ -33,7 +33,7 @@ function downloadPdf() {
     <Divider>Languages</Divider>
     <div class="languages">
       <div v-for="(level, language) in languages" :key="language">
-        <h4>{{ language }}</h4>
+        <h3>{{ language }}</h3>
         <span>{{ level }}</span>
       </div>
     </div>

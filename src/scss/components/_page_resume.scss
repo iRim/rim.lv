@@ -13,16 +13,17 @@ article {
     margin: 0;
   }
 
-  > h4 {
+  > h2 {
+    font-size: 1rem;
     font-weight: 600;
   }
 
-  > h4 + *,
+  > h2 + *,
   > div + * {
     margin-top: 0.5rem;
   }
 
-  > h4 > span {
+  > h2 > span {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
@@ -50,7 +51,8 @@ article {
   flex-direction: row;
   gap: 2rem;
 
-  h4 {
+  h3 {
+    font-size: 1rem;
     margin: 0;
   }
 }
