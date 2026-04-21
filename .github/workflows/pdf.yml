@@ -36,7 +36,7 @@ jobs:
         run: sleep 30
 
       - name: Generate PDF
-        run: node scripts/generate-pdf.js
+        run: node generate-pdf.js
 
       - name: Commit PDF to gh-pages
         run: |
