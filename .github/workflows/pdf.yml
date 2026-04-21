@@ -30,7 +30,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npx playwright install --with-deps
+      - run: npx playwright install chromium --with-deps
 
       - name: Wait 30s for deploy
         run: sleep 30
