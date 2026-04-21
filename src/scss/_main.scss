@@ -34,7 +34,8 @@ body {
   padding-left: 1rem;
 }
 
-h1 + button {
+h1 + button,
+h1 + a {
   height: stretch;
 }
 
