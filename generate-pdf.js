@@ -11,12 +11,17 @@ await page.goto('https://rim.lv', {
   timeout: 60000,
 })
 
+await page.emulateMedia({ media: 'print' })
 await page.waitForSelector('#app')
-
 await page.pdf({
   path: 'gh-pages/Ihor_Rusenko_Resume.pdf',
   format: 'A4',
-  printBackground: true,
+  margin: {
+    top: '10mm',
+    bottom: '10mm',
+    left: '10mm',
+    right: '10mm',
+  },
 })
 
 await browser.close()
