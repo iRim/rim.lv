@@ -1,6 +1,7 @@
 import { chromium } from 'playwright'
 
 const browser = await chromium.launch({
+  channel: 'chrome',
   args: ['--no-sandbox'],
 })
 
