@@ -13,6 +13,7 @@ type Technology =
   | 'CSS3'
   | 'Sass'
   | 'Less'
+  | 'Tailwind CSS'
   | 'Vue.js'
   | 'React'
   | 'jQuery'
@@ -47,6 +48,8 @@ type Technology =
 
   // Other
   | 'Firebase'
+  | 'Twig'
+  | 'Figma'
 
 type Environment =
   | 'AWS'

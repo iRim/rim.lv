@@ -198,6 +198,7 @@ export const workExpirience: WorkExperienceInterface[] = [
     freelance: true,
     period: {
       from: new Date(2025, 2),
+      to: new Date(2026, 2),
     },
     description:
       'Development and maintenance of web applications, database design and optimization, API development and integration, data parser development and support, and modernization of legacy code to newer PHP versions.',
@@ -219,5 +220,15 @@ export const workExpirience: WorkExperienceInterface[] = [
       'HTML5',
       'CSS3',
     ],
+  },
+
+  {
+    freelance: false,
+    period: {
+      from: new Date(2026, 2),
+    },
+    company: 'Proacto',
+    description: 'Layout implementation and integration into a custom Drupal template.',
+    technologies: ['PHP', 'Twig', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
   },
 ]
