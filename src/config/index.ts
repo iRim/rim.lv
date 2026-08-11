@@ -219,6 +219,7 @@ export const workExpirience: WorkExperienceInterface[] = [
       'WebSocket',
       'HTML5',
       'CSS3',
+      'Sass',
     ],
   },
 
@@ -226,9 +227,31 @@ export const workExpirience: WorkExperienceInterface[] = [
     freelance: false,
     period: {
       from: new Date(2026, 1),
+      to: new Date(2026, 6),
     },
     company: 'Proacto',
     description: 'Layout implementation and integration into a custom Drupal template.',
-    technologies: ['PHP', 'Twig', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
+    technologies: ['PHP', 'Twig', 'JavaScript', 'HTML5', 'CSS3', 'Sass', 'Tailwind CSS'],
+  },
+
+  {
+    freelance: true,
+    period: {
+      from: new Date(2026, 6),
+    },
+    description:
+      'Development and maintenance of web applications, modernization of legacy code to newer PHP versions.',
+    technologies: [
+      'PHP',
+      'Laravel',
+      'JavaScript',
+      'Vue.js',
+      'jQuery',
+      'MySQL',
+      'Redis',
+      'HTML5',
+      'CSS3',
+      'Sass',
+    ],
   },
 ]
