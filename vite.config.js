@@ -18,6 +18,8 @@ export default defineConfig({
     },
   },
 
+  publicDir: 'static',
+
   build: {
     outDir: PUBLIC_PATH,
     emptyOutDir: true,

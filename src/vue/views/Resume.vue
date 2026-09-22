@@ -12,22 +12,29 @@ function downloadPdf() {
   link.download = filename
   link.click()
 }
+
+const reversedWorkExperience = [...workExpirience].reverse()
 </script>
 
 <template>
   <div class="row">
     <h1>{{ header.title }}'s Resume</h1>
-    <button class="right no-print" @click="downloadPdf">
+    <button
+      class="right no-print"
+      type="button"
+      aria-label="Download resume as PDF"
+      @click="downloadPdf"
+    >
       Download as
-      <FontAwesomeIcon :icon="faFilePdf" size="lg" />
+      <FontAwesomeIcon :icon="faFilePdf" size="lg" aria-hidden="true" />
     </button>
   </div>
   <p v-html="header.description"></p>
 
   <div>
     <Divider>Work experience</Divider>
-    <div class="column-reverse">
-      <ResumeBlock v-for="(item, key) in workExpirience" :key="key" :item="item" />
+    <div>
+      <ResumeBlock v-for="(item, key) in reversedWorkExperience" :key="key" :item="item" />
     </div>
 
     <Divider>Languages</Divider>
