@@ -5,7 +5,7 @@ article {
   display: flex;
   flex-direction: column;
 
-  &:not(:first-child) {
+  &:not(:last-child) {
     margin-bottom: 2rem;
   }
 
