@@ -1,5 +1,5 @@
 <script setup>
-import { formatDate } from '@/utils/date'
+import { formatDate, toDateAttribute } from '@/utils/date'
 
 defineProps({
   title: { type: String, required: true },
@@ -27,8 +27,14 @@ defineProps({
             </h3>
           </div>
           <p class="resume-date">
-            {{ formatDate(item.period.from, dateFormat, locale) }} –
-            {{ item.period.to ? formatDate(item.period.to, dateFormat, locale) : presentLabel }}
+            <time :datetime="toDateAttribute(item.period.from)">
+              {{ formatDate(item.period.from, dateFormat, locale) }}
+            </time>
+            <span aria-hidden="true">–</span>
+            <time v-if="item.period.to" :datetime="toDateAttribute(item.period.to)">
+              {{ formatDate(item.period.to, dateFormat, locale) }}
+            </time>
+            <span v-else>{{ presentLabel }}</span>
           </p>
         </header>
         <div class="resume-tags">

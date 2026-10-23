@@ -1,7 +1,7 @@
 <script setup>
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
-import { header, languages, siteContent, socials, workExpirience } from '@/config'
+import { header, languages, siteContent, socials, workExperience } from '@/config'
 import { i18n } from '@/config/i18n'
 import avatar from '@/img/photo.webp'
 import ResumeHeader from '../components/resume/ResumeHeader.vue'
@@ -27,6 +27,7 @@ const contactLinks = socials.map((social) => ({
 }))
 
 const buildDate = __BUILD_DATE__
+const currentYear = new Date().getFullYear()
 
 function downloadPdf() {
   window.location.href = '/Ihor_Rusenko_Resume.pdf'
@@ -57,18 +58,14 @@ function downloadPdf() {
       <ResumeExpertise :title="i18n.labels.expertise" :items="siteContent.expertise" />
       <ResumeExperience
         :title="i18n.labels.experience"
-        :entries="workExpirience"
+        :entries="workExperience"
         :freelance-label="i18n.labels.freelance"
         :present-label="i18n.labels.present"
         :default-position="siteContent.role"
         :date-format="i18n.dateFormat"
         :locale="i18n.locale"
       />
-      <ResumeFooter
-        :year="new Date().getFullYear()"
-        :label="i18n.labels.lastUpdate"
-        :build-date="buildDate"
-      />
+      <ResumeFooter :year="currentYear" :label="i18n.labels.lastUpdate" :build-date="buildDate" />
     </article>
   </div>
 </template>

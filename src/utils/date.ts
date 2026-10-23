@@ -16,3 +16,9 @@ export const formatDate = (
     year: 'numeric',
   }).format(d)
 }
+
+export const toDateAttribute = (date: Date | string): string => {
+  const d = date instanceof Date ? date : new Date(date)
+
+  return d.toISOString().slice(0, 10)
+}

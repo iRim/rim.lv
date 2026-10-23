@@ -30,6 +30,7 @@
   object-position: center 22%;
   border-radius: 0.25rem;
   background: #edf0f3;
+  display: block;
 }
 
 .resume-header__kicker {
@@ -102,6 +103,11 @@
 .resume-header__download:hover,
 .resume-header__download:focus-visible {
   background: var(--color-secondary);
+}
+
+.resume-header__download:focus-visible,
+.not-found__link:focus-visible {
+  outline-color: var(--color-secondary);
 }
 
 .resume-intro {
@@ -436,6 +442,32 @@
 
   .resume-date {
     margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .resume-page {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .resume-header {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .resume-header__avatar {
+    width: 4.5rem;
+    height: 5.5rem;
+  }
+
+  .resume-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .resume-skill-groups,
+  .resume-expertise ul {
+    grid-template-columns: 1fr;
   }
 }
 

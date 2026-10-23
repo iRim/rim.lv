@@ -1,7 +1,7 @@
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-import { header, languages, siteContent, socials, workExpirience } from '@/config'
+import { header, languages, siteContent, socials, workExperience } from '@/config'
 import { i18n } from '@/config/i18n'
 import { formatDate } from '@/utils/date'
 import avatar from '@/img/photo.webp'
@@ -27,7 +27,15 @@ function companyName(item) {
   <main class="pdf-shell">
     <article class="pdf-page">
       <header class="pdf-header">
-        <img class="pdf-avatar" :src="avatar" :alt="header.title" width="132" height="132" />
+        <img
+          class="pdf-avatar"
+          :src="avatar"
+          :alt="header.title"
+          width="132"
+          height="132"
+          loading="eager"
+          decoding="async"
+        />
         <div class="pdf-identity">
           <p class="pdf-kicker">{{ i18n.labels.curriculumVitae }}</p>
           <h1>{{ header.title }}</h1>
@@ -96,7 +104,7 @@ function companyName(item) {
         <h2 id="pdf-experience-heading">{{ i18n.labels.experience }}</h2>
         <div class="pdf-experience-list">
           <article
-            v-for="(item, key) in [...workExpirience].reverse()"
+            v-for="(item, key) in [...workExperience].reverse()"
             :key="key"
             class="pdf-experience-entry"
           >

@@ -7,6 +7,7 @@ const isHomePage = window.location.pathname === '/' || window.location.pathname 
 </script>
 
 <template>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <MainLayout>
     <Resume v-if="isHomePage" />
     <NotFound v-else />

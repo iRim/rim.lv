@@ -1,12 +1,12 @@
 import { faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { WorkExperienceInterface, SocialsInterface } from './interfaces'
+import type { WorkExperienceInterface, SocialsInterface } from './interfaces'
 
 export const contacts = {
   email: 'rusenko.i@outlook.com',
 }
 
-export const languages = {
+export const languages: Record<string, string> = {
   Ukrainian: 'Native',
   English: 'Pre-intermediate (A2+)',
   Russian: 'Fluent',
@@ -75,7 +75,7 @@ export const socials: SocialsInterface[] = [
   },
 ]
 
-export const workExpirience: WorkExperienceInterface[] = [
+export const workExperience: WorkExperienceInterface[] = [
   {
     company: 'Kraser',
     period: {

@@ -18,7 +18,15 @@ defineEmits(['download'])
 
 <template>
   <header class="resume-header">
-    <img class="resume-header__avatar" :src="avatar" :alt="title" width="132" height="132" />
+    <img
+      class="resume-header__avatar"
+      :src="avatar"
+      :alt="title"
+      width="132"
+      height="132"
+      loading="eager"
+      decoding="async"
+    />
     <div class="resume-header__identity">
       <p class="resume-header__kicker">{{ kicker }}</p>
       <h1>{{ title }}</h1>
@@ -31,6 +39,7 @@ defineEmits(['download'])
           :href="contact.url"
           :target="contact.external ? '_blank' : undefined"
           :rel="contact.external ? 'noopener noreferrer' : undefined"
+          :aria-label="`${contact.name}: ${contact.title}`"
         >
           <FontAwesomeIcon :icon="contact.icon" aria-hidden="true" />
           <span>{{ contact.title }}</span>
