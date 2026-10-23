@@ -5,7 +5,7 @@ const browser = await chromium.launch({
 })
 
 const page = await browser.newPage()
-const url = process.env.RESUME_URL || 'http://127.0.0.1:4173/resume-pdf'
+const url = process.env.RESUME_URL || 'http://127.0.0.1:4173/pdf.html'
 
 await page.goto(url, {
   waitUntil: 'networkidle',

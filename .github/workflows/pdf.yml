@@ -31,6 +31,9 @@ jobs:
       - name: Generate PDF
         run: node generate-pdf.js
 
+      - name: Remove internal PDF entry
+        run: rm public/pdf.html
+
       - name: Publish site and PDF
         uses: peaceiris/actions-gh-pages@v4
         with:

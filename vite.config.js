@@ -26,6 +26,12 @@ export default defineConfig({
     manifest: true,
     target: 'esnext',
     sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        pdf: fileURLToPath(new URL('./pdf.html', import.meta.url)),
+      },
+    },
   },
 
   plugins: [vue()],
