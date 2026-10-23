@@ -9,6 +9,7 @@ interface BaseWorkExperienceInterface {
   }
   // nda: boolean
   description: string
+  highlights?: string[]
   // team?: TeamCounts
   technologies: Technology[]
 }
