@@ -29,7 +29,7 @@ const contactLinks = socials.map((social) => ({
 const buildDate = __BUILD_DATE__
 
 function downloadPdf() {
-  window.print()
+  window.location.href = '/Ihor_Rusenko_Resume.pdf'
 }
 </script>
 

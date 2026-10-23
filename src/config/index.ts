@@ -21,7 +21,7 @@ export const header = {
 }
 
 export const siteContent = {
-  role: 'Full-Stack Developer',
+  role: 'Full-Stack Web Developer',
   specialism: 'PHP / Laravel / JavaScript / Vue.js',
   skillGroups: {
     Backend: ['PHP', 'Laravel', 'Yii', 'Kohana', 'CodeIgniter', 'Slim', 'Fat-Free', 'REST API'],

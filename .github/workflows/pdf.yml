@@ -1,28 +1,19 @@
-name: Generate PDF
+name: Build and Deploy
 
 on:
-  workflow_run:
-    workflows: ['Deploy']
-    types:
-      - completed
+  push:
+    branches: [master]
 
 permissions:
   contents: write
 
 jobs:
-  pdf:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-22.04
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
-      - name: Checkout gh-pages
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
 
       - uses: actions/setup-node@v4
         with:
@@ -31,20 +22,18 @@ jobs:
 
       - run: npm ci
 
-      - name: Check Chrome
-        run: google-chrome --version
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
 
-      - name: Wait 30s for deploy
-        run: sleep 30
+      - name: Start local preview server
+        run: npm run preview -- --host 127.0.0.1 --port 4173 &
 
       - name: Generate PDF
         run: node generate-pdf.js
 
-      - name: Commit PDF to gh-pages
-        run: |
-          cd gh-pages
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add Ihor_Rusenko_Resume.pdf
-          git commit -m "auto: update pdf" || echo "No changes"
-          git push
+      - name: Publish site and PDF
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: rim.lv
