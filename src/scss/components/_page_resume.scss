@@ -329,6 +329,51 @@
   font-size: 0.8125rem;
 }
 
+.not-found {
+  display: grid;
+  min-height: 24rem;
+  align-content: center;
+  justify-items: start;
+  gap: 0.8rem;
+}
+
+.not-found__code {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.not-found h1 {
+  margin: 0;
+  color: var(--color-secondary);
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.not-found > p:not(.not-found__code) {
+  margin: 0;
+  color: #66717c;
+}
+
+.not-found__link {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem;
+  background: var(--color-primary);
+  color: var(--color-light);
+  font-weight: 700;
+}
+
+.not-found__link:hover,
+.not-found__link:focus-visible {
+  background: var(--color-secondary);
+  color: var(--color-light);
+  text-decoration: none;
+}
+
 @media (max-width: 900px) {
   .resume-page {
     padding-right: 2.5rem;
