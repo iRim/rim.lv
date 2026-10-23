@@ -1,48 +1,74 @@
 <script setup>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
-import { header, workExpirience, languages } from '@/config'
-import Divider from '../components/Divider.vue'
-import ResumeBlock from '../components/ResumeBlock.vue'
+import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
+import { header, languages, siteContent, socials, workExpirience } from '@/config'
+import { i18n } from '@/config/i18n'
+import avatar from '@/img/photo.webp'
+import ResumeHeader from '../components/resume/ResumeHeader.vue'
+import ResumeProfile from '../components/resume/ResumeProfile.vue'
+import ResumeSkills from '../components/resume/ResumeSkills.vue'
+import ResumeLanguages from '../components/resume/ResumeLanguages.vue'
+import ResumeExpertise from '../components/resume/ResumeExpertise.vue'
+import ResumeExperience from '../components/resume/ResumeExperience.vue'
+import ResumeFooter from '../components/resume/ResumeFooter.vue'
 
-function downloadPdf() {
-  let filename = 'Ihor_Rusenko_Resume.pdf'
-  const link = document.createElement('a')
-  link.href = filename
-  link.download = filename
-  link.click()
+const icons = {
+  Email: faEnvelope,
+  Telegram: faTelegram,
+  GitHub: faGithub,
+  LinkedIn: faLinkedin,
+  Website: faGlobe,
 }
 
-const reversedWorkExperience = [...workExpirience].reverse()
+const contactLinks = socials.map((social) => ({
+  ...social,
+  external: !social.url.startsWith('mailto:'),
+  icon: icons[social.name] || social.icon,
+}))
+
+const buildDate = __BUILD_DATE__
+
+function downloadPdf() {
+  window.print()
+}
 </script>
 
 <template>
-  <div class="row">
-    <h1>{{ header.title }}'s Resume</h1>
-    <button
-      class="right no-print"
-      type="button"
-      aria-label="Download resume as PDF"
-      @click="downloadPdf"
-    >
-      Download as
-      <FontAwesomeIcon :icon="faFilePdf" size="lg" aria-hidden="true" />
-    </button>
-  </div>
-  <p v-html="header.description"></p>
+  <div class="resume-shell">
+    <article class="resume-page">
+      <ResumeHeader
+        :title="header.title"
+        :role="siteContent.role"
+        :specialism="siteContent.specialism"
+        :kicker="i18n.labels.curriculumVitae"
+        :download-label="i18n.labels.downloadPdf"
+        :contacts-label="i18n.labels.contactInformation"
+        :contacts="contactLinks"
+        :avatar="avatar"
+        @download="downloadPdf"
+      />
 
-  <div>
-    <Divider>Work experience</Divider>
-    <div>
-      <ResumeBlock v-for="(item, key) in reversedWorkExperience" :key="key" :item="item" />
-    </div>
-
-    <Divider>Languages</Divider>
-    <div class="languages">
-      <div v-for="(level, language) in languages" :key="language">
-        <h3>{{ language }}</h3>
-        <span>{{ level }}</span>
+      <div class="resume-intro">
+        <ResumeProfile :title="i18n.labels.profile" :description="header.description" />
+        <ResumeSkills :title="i18n.labels.skills" :groups="siteContent.skillGroups" />
+        <ResumeLanguages :title="i18n.labels.languages" :languages="languages" />
       </div>
-    </div>
+
+      <ResumeExpertise :title="i18n.labels.expertise" :items="siteContent.expertise" />
+      <ResumeExperience
+        :title="i18n.labels.experience"
+        :entries="workExpirience"
+        :freelance-label="i18n.labels.freelance"
+        :present-label="i18n.labels.present"
+        :default-position="siteContent.role"
+        :date-format="i18n.dateFormat"
+        :locale="i18n.locale"
+      />
+      <ResumeFooter
+        :year="new Date().getFullYear()"
+        :label="i18n.labels.lastUpdate"
+        :build-date="buildDate"
+      />
+    </article>
   </div>
 </template>
